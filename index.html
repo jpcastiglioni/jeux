@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Joyeux anniversaire</title>
+  <meta charset="utf-8">
+  <style>
+    * {
+      margin: 0;
+    }
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+<script src="https://kaboomjs.com/lib/0.5.0/kaboom.js"></script>
+<script src="https://kaboomjs.com/lib/0.5.0/plugins/aseprite.js"></script>
+<script src="https://kaboomjs.com/lib/0.5.0/plugins/pedit.js"></script>
+<script src="https://kaboomjs.com/pub/legacy/kbmsprite.js"></script>
+
+  <script>
+
+kaboom({
+  ...{"fullscreen":true,"width":640,"height":400,"scale":1,"startScene":"menu","version":"0.5.0","clearColor":[0.8509803921568627,0.5333333333333333,0.5294117647058824,1]},
+  global: true,
+  plugins: [ peditPlugin, asepritePlugin, kbmspritePlugin ],
+});
+
+
+loadSprite("gear-grey", "/sprites/gear-grey.png");
+
+scene("menu", (args = {}) => {
+
+const title = add ([
+  text("TEST",120),
+  pos(width() / 2, height() / 3),
+  // color(218,197,204),
+  color(0.847,0.827,0.851),
+  origin("center"),
+])
+
+const startButtonExt = add([
+  rect(280,120),
+  pos(width() / 2, height() * 2 / 3),
+  // color(218,197,204),
+  color(0.847,0.827,0.851),
+  origin("center"),
+]);
+
+const startButton = add([
+  rect(240,90),
+  pos(width() / 2, height() * 2 / 3),
+// color(218,197,204),
+  color(0.855,0.772,0.8),
+  origin("center"),
+]);
+
+const startButtonText = add([
+  text("MIAU",48),
+  pos(width() / 2, height() * 2 / 3),
+  // color(218,197,204),
+  color(0.850,0.650,0.619),
+  origin("center"),
+]);
+
+start("menu");
+
+  </script>
+</body>
+
+</html>
